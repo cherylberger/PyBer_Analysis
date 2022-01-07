@@ -65,6 +65,12 @@ PyBer_summary_df
 #### After removing the index label and formatting the data, the final summary of the ride data by type is displayed below
 <Add image of formatted DataFrame>
 
+ 
+* The total number of rides in the urban cities is the highest.
+* The average number of rides in the rural cities is about 3.5 and 2.5 times lower than urban and suburban cities, respectively.
+* The average fare by city type,  is highest in the rural cities and lowest in the ____ cities
+* The average fare per driver is Xtimes higher in ____cities than ______ and _________. 
+* 
 ### 2) Next, using Pandas and Matplotlib, create a multiple line plot that shows the total weekly of the fares for each type of city.
 #### Read the merged DataFrame
 %matplotlib inline
@@ -98,8 +104,7 @@ weekly_fares_df = fares_Jan_April.resample('W').sum()
 weekly_fares_df.head(10)  
 ![image](https://user-images.githubusercontent.com/94234511/148485146-5a0f8263-408f-43b3-8709-8ca709fe6790.png)
 
-### 3) Using the object-oriented interface method, plot the resample DataFrame using the df.plot() function. 
-
+### 3) Using the object-oriented interface method, plot the resample DataFrame
 #### Import the style from Matplotlib.
 from matplotlib import style
 #### Use the graph style fivethirtyeight.
