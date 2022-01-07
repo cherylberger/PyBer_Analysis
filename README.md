@@ -9,7 +9,7 @@ The report includes two key outputs:
 1) A ride-sharing summary DataFrame by city type
 2) A multiple-line chart of total fares for each city type
 
-### First, create the ride-sharing summary DataFrame by city type using the Python code and create a Pandas DataFrames to display the datatable (DataFrame).  
+### First, create the ride-sharing summary by city type using the Python code below and create a Pandas DataFrames to display the datatable (DataFrame).  
 
   #### Add Matplotlib inline magic command
   %matplotlib inline
@@ -26,7 +26,9 @@ The report includes two key outputs:
   pyber_data_df.head()
 ![image](https://user-images.githubusercontent.com/94234511/148483493-1f2095ca-eb94-47ef-9647-a21ca3f65700.png)
 
-## Results: Using the code steps described below, generate the summary data by city type 
+## Results: 
+
+### Using the code steps described below, generate the summary data by city type and create the PyBer_Challenge Summary in Pandas DataFrame (see PyBer_Challenge.ipnyb) 
 
   #### 1) Using groupby statements get the data to build a summary data frame that includes the following parameters by city type:
                       * Total Rides	
@@ -50,7 +52,7 @@ The report includes two key outputs:
   average_fare_by_driver_count = pyber_data_df.groupby(["type"]).mean()["driver_count"]
   average_fare_by_driver_count.head()
 
-#### Using Pandas generate the PyBer Summary dataframe
+#### Using Pandas generate the PyBer_Challenge Summary dataframe
   PyBer_summary_df = pd.DataFrame ({'Total Rides':total_ride_count,
                    'Total Drivers':total_driver_count,
                    'Total Fare':total_fare_count, 
@@ -63,14 +65,14 @@ The report includes two key outputs:
   #### After removing the index label and formatting the data, the final summary of the ride data by type is displayed below
   <Add image of formatted DataFrame>
 
-  #### The differences in ride-sharing data among the different city types are explained below:
+  ### The differences in ride-sharing data among the different city types are explained below:
  
   * The total number of rides in the urban cities is the highest with a total of 1625 rides. Urban ride counts are almost triple the number of rides in suburban cities, 625 and about 15 times higher than rural cities, 125 rides. 
   * Similarly, the total number of PyBer drivers varies drastically by city type during the first quarter of 2019.   These data indicate approximately 500 drivers serve the rural cities, 8500 in suburban cities while driver counts near 60,000 in urban cities. This is consistent with earlier reports for these data that indicated the average number of rides in the rural cities was about 3.5 and 2.5 times lower than urban and suburban cities, respectively.
   * The average fare by city type is the highest in the rural cities at $34.62 is the lowest in the urban cities, $24.52
   * The average fare per driver is almost 10 times higher in the urban cities at $36.76 compared to $30.00 and average fares of $4.29 for rural cities.
 
-### 2) Next, using Pandas and Matplotlib, create a multiple line plot that shows the total weekly of the fares for each type of city.
+#### 2) Next, using Pandas and Matplotlib, create a multiple line plot that shows the total weekly of the fares for each type of city.
   #### Read the merged DataFrame
   %matplotlib inline
   #### Import Dependencies
@@ -100,7 +102,7 @@ The report includes two key outputs:
   weekly_fares_df.head(10)  
 ![image](https://user-images.githubusercontent.com/94234511/148485146-5a0f8263-408f-43b3-8709-8ca709fe6790.png)
 
-### 3) Using the object-oriented interface method, plot the resample DataFrame
+#### 3) Using the object-oriented interface method, plot the resample DataFrame
   #### Import the style from Matplotlib.
   from matplotlib import style
   #### Use the graph style fivethirtyeight.
@@ -114,9 +116,11 @@ The report includes two key outputs:
   ![image](https://user-images.githubusercontent.com/94234511/148487520-952dafb6-86a0-4d02-a124-9b5eec558d00.png)
 
 ## Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
-  #### 1) Recommendation 1
-  #### 2) Recommendation 2
-  #### 3) Recommendation 3
+  ### 1) Recommendation 1
+  
+  ### 2) Recommendation 2
+  
+  ### 3) Recommendation 3
    
 
 
