@@ -1,8 +1,8 @@
 # PyBer_Analysis
-## PyBer Analysis Files
+
 #### Cheryl Berger
 
-### Overview of the analysis: Explain the purpose of the new analysis.
+## Overview of the analysis: Explain the purpose of the new analysis.
 The purpose of the analysis is to create a new database of the ride sharing data for PyBer and analyze the weekly fares by city type. V Isualize requested this analysis to assist the CEO in making future business decisions. A report of the analysis will be provide that includes the steps to generate the data summary using Python and a line plot of the fare data generated in Pandas.  The results will be used to compare the differences in ride sharing data by city type.  Finally, a summary of the analysis and recommendations for PyBer to address the disparities in fares by city type.    
 
 The report includes two key outputs: 
@@ -28,7 +28,7 @@ pyber_data_df = pd.merge(ride_data_df, city_data_df, how="left", on=["city", "ci
 pyber_data_df.head()
 ![image](https://user-images.githubusercontent.com/94234511/148483493-1f2095ca-eb94-47ef-9647-a21ca3f65700.png)
 
-### Results: Using images from the summary DataFrame and multiple-line chart, describe the differences in ride-sharing data among the different city types.
+## Results: Using images from the summary DataFrame and multiple-line chart, describe the differences in ride-sharing data among the different city types.
 
 #### Using groupby statements get the data to build a summary data frame that includes the following parameters by city type:
 * Total Rides	
@@ -117,7 +117,7 @@ plt.savefig("Resources\PyBer_fare_summary.png")
   http://localhost:8888/view/PyBer%20Challenge/Resources/PyBer_fare_summary.png
   ![image](https://user-images.githubusercontent.com/94234511/148487520-952dafb6-86a0-4d02-a124-9b5eec558d00.png)
 
-### Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
+## Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
   #### 1) Recommendation 1
   #### 2) Recommendation 2
   #### 3) Recommendation 3
