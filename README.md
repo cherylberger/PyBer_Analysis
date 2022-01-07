@@ -2,7 +2,7 @@
 
 #### Cheryl Berger
 
-## Overview of the analysis: Explain the purpose of the new analysis.
+## Overview of the analysis: 
 The purpose of the analysis is to create a new database of the ride sharing data for PyBer and analyze the weekly fares by city type. V Isualize requested this analysis to assist the CEO in making future business decisions. A report of the analysis will be provide that includes the steps to generate the data summary using Python and a line plot of the fare data generated in Pandas.  The results will be used to compare the differences in ride sharing data by city type.  Finally, a summary of the analysis and recommendations for PyBer to address the disparities in fares by city type.    
 
 The report includes two key outputs: 
@@ -84,7 +84,7 @@ The report includes two key outputs:
   * The total number of rides in the urban cities is the highest with a total of 1625 rides. Urban ride counts are almost triple the number of rides in suburban cities, 625 and about 15 times higher than rural cities, 125 rides. 
   * Similarly, the total number of PyBer drivers varies drastically by city type during the first quarter of 2019.   These data indicate approximately 500 drivers serve the rural cities, 8500 in suburban cities while driver counts near 60,000 in urban cities. This is consistent with earlier reports for these data that indicated the average number of rides in the rural cities was about 3.5 and 2.5 times lower than urban and suburban cities, respectively.
   * The average fare by city type is the highest in the rural cities at $34.62 is the lowest in the urban cities, $24.52
-  * The average fare per driver is almost 10 times higher in the urban cities at $36.76 compared to $30.00 and average fares of $4.29 for rural cities.
+  * The average fare per driver is almost 10 times higher in the urban cities at $36.76 compared to average fares of $4.29 for rural cities. Average fares in suburban cities was almost $14.00/ride, nearly triple the average fare for rural cities.
 
   #### 2) Next, using Pandas and Matplotlib, create a multiple line plot that shows the total weekly of the fares for each type of city.
   
@@ -130,13 +130,14 @@ The report includes two key outputs:
   http://localhost:8888/view/PyBer%20Challenge/Resources/PyBer_fare_summary.png
   ![image](https://user-images.githubusercontent.com/94234511/148487520-952dafb6-86a0-4d02-a124-9b5eec558d00.png)
 
-## Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
+## Summary: 
+Based on the results, there are three recommendations for V. Isualize to present to the CEO addressing a few disparities among the city types.
   ### 1) Recommendation 1
-  
+There is a significant discrepancy in the average fare per driver by city type, while the average fare per ride varies by less than 20% among the types with rural city fares carrying the highest average fare.  From the data, it is not clear why, so additional analysis may be needed.  If this is due to the length of the ride and sharing of the fare/ride among drivers, a different metric may be needed for direct comparison such as total fare/mile and total miles/driver.  Alternatively, the fare or driver data may need further review for errors in reporting.  Practically speaking, rural cities are often smaller in both geographical size and population density and may or may not be near suburban or urban cities.  Since the average fare is high for these rides, a discrepancy in the critera for the driver count by city type should be performed by the providers of the ride and city data used in this analysis.    
   ### 2) Recommendation 2
-  
-  ### 3) Recommendation 3
-   
+The business appears to be ripe for growth in the suburban areas.  The ratio of total drivers to total rides for the urban cities is approximately 35:1 compared to roughly 13:1 for the suburban city types.  Increasing the number of drivers in the suburban areas could make the ride sharing program more accessible to more riders. therby increasing the total number of rides.  In addition, if PyBer budgets allow, using some type of visual advertising on the drivers vehicles may even increase awareness of the program.  The same recommendation would apply to the rural areas if the data is valid for the analysis performed, however the average fare per driver is not likely to entice any new drivers without additional incentives.   
+  ### 3) Recommendation 3 
+
 
 
 
