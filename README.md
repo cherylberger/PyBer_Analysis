@@ -63,7 +63,7 @@ The report includes two key outputs:
 ![image](https://user-images.githubusercontent.com/94234511/148483966-0c3485b6-9c93-4e70-8d64-5ddb7dcfad09.png)
 
   #### After removing the index label and formatting the data, the final summary of the ride data by type is displayed below
-  <Add image of formatted DataFrame>
+![image](https://user-images.githubusercontent.com/94234511/148553616-db500b20-16f7-4128-9c35-4dc75f8f72fd.png)
 
   ### The differences in ride-sharing data among the different city types are explained below:
  
@@ -97,7 +97,7 @@ The report includes two key outputs:
   fares_Jan_April.index = pd.to_datetime(fares_Jan_April.index)
   fares_Jan_April
   fares_Jan_April.info()   
-  #### Finally, create a new DataFrame using the "resample()" function by week 'W' and get the sum of the fares for each week.
+  #### Finally, create a new DataFrame using the "resample()" function in Python to get the sum of the fares for each week.
   weekly_fares_df = fares_Jan_April.resample('W').sum()
   weekly_fares_df.head(10)  
 ![image](https://user-images.githubusercontent.com/94234511/148485146-5a0f8263-408f-43b3-8709-8ca709fe6790.png)
