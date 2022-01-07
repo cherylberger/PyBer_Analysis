@@ -28,7 +28,7 @@ The report includes two key outputs:
 
 ## Results: 
 
-### Using the code steps described below, generate the summary data by city type and create the PyBer_Challenge Summary in Pandas DataFrame (see PyBer_Challenge.ipnyb) 
+### Using the code steps described below, generate the summary data by city type and create the PyBer_Challenge Summary in Pandas DataFrame (see PyBer_Challenge.ipynb) 
 
   #### 1) Using groupby statements, get the data to build a summary data frame that includes the following parameters by city type:
                       * Total Rides	
@@ -52,13 +52,13 @@ The report includes two key outputs:
   average_fare_by_driver_count = pyber_data_df.groupby(["type"]).mean()["driver_count"]
   average_fare_by_driver_count.head()
 
-#### Using Pandas, generate the PyBer_Challenge Summary dataframe and display the table
-  PyBer_summary_df = pd.DataFrame ({'Total Rides':total_ride_count,
-                   'Total Drivers':total_driver_count,
-                   'Total Fare':total_fare_count, 
-                   'Average Fare per Ride':average_fares_by_type, 
-                   'Average Fare per Driver':average_fare_by_driver_count}) 
-  PyBer_summary_df
+  #### Using Pandas, generate the PyBer_Challenge Summary DataFrame and display the table
+    PyBer_summary_df = pd.DataFrame ({'Total Rides':total_ride_count,
+                     'Total Drivers':total_driver_count,
+                     'Total Fare':total_fare_count, 
+                     'Average Fare per Ride':average_fares_by_type, 
+                     'Average Fare per Driver':average_fare_by_driver_count}) 
+    PyBer_summary_df
 
 ![image](https://user-images.githubusercontent.com/94234511/148483966-0c3485b6-9c93-4e70-8d64-5ddb7dcfad09.png)
 
@@ -86,7 +86,8 @@ The report includes two key outputs:
   * The average fare by city type is the highest in the rural cities at $34.62 is the lowest in the urban cities, $24.52
   * The average fare per driver is almost 10 times higher in the urban cities at $36.76 compared to $30.00 and average fares of $4.29 for rural cities.
 
-#### 2) Next, using Pandas and Matplotlib, create a multiple line plot that shows the total weekly of the fares for each type of city.
+  #### 2) Next, using Pandas and Matplotlib, create a multiple line plot that shows the total weekly of the fares for each type of city.
+  
   #### Read the merged DataFrame
   %matplotlib inline
   #### Import Dependencies
@@ -116,7 +117,7 @@ The report includes two key outputs:
   weekly_fares_df.head(10)  
 ![image](https://user-images.githubusercontent.com/94234511/148485146-5a0f8263-408f-43b3-8709-8ca709fe6790.png)
 
-#### 3) Using the object-oriented interface method, plot the resample DataFrame
+#### 3) Using the object-oriented interface method, generate the line chart for Total Fare by City Type and apply graph style 538.
   #### Import the style from Matplotlib.
   from matplotlib import style
   #### Use the graph style fivethirtyeight.
