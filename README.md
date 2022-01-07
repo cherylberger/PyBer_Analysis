@@ -59,17 +59,74 @@ After removing the index label and formatting the data, the final summary of the
 
 Next, create a multiple line plot that shows the total weekly of the fares for each type of city.¶
 
+# 1. Read the merged DataFrame
+%matplotlib inline
 
+# Dependencies
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
+Load the data and merge the DataFrame using the same code described 
 
+ # 2. Using groupby() to create a new DataFrame showing the sum of the fares 
+#  for each date where the indices are the city type and date.
+total_fare_count_by_type_by_date = pyber_data_df.groupby(["type", "date"]).sum()[["fare"]]
+total_fare_count_by_type_by_date 
+  
+# 3. Reset the index on the DataFrame you created in #1. This is needed to use the 'pivot()' function.
+# df = df.reset_index()
+total_fare_df = total_fare_count_by_type_by_date.reset_index()
+total_fare_df.head()  
 
+# 4. Create a pivot table with the 'date' as the index, the columns ='type', and values='fare' 
+# to get the total fares for each type of city by the date. 
+total_fare_pivot = total_fare_df.pivot(index="date", columns="type", values="fare")
+total_fare_pivot.tail(10)
+  
+# 5. Create a new DataFrame from the pivot table DataFrame using loc on the given dates, '2019-01-01':'2019-04-29'.
+# new_total_fare = total_fare_df.loc[(total_fare_df["date"] == '2019-01-01:2019-04-28')].sum()[["fare"]]
+# new_total_fare
+# 4. Create a new DataFrame from the pivot table DataFrame using loc on the given dates, '2019-01-01':'2019-04-29'.
+fares_Jan_April = total_fare_pivot.loc['2019-01-01':'2019-04-28']
+fares_Jan_April.head(20)  
+  
+# 6. Set the "date" index to datetime datatype. This is necessary to use the resample() method in Step 8.
+# df.index = pd.to_datetime(df.index)
+fares_Jan_April.index = pd.to_datetime(fares_Jan_April.index)
+fares_Jan_April
 
+# 7. Check that the datatype for the index is datetime using df.info()
+fares_Jan_April.info()  
+  
+# 8. Create a new DataFrame using the "resample()" function by week 'W' and get the sum of the fares for each week.
+# weekly_total_fare = new_total_fare_df.fare.resample('W').sum()
+# weekly_total_fare
 
+weekly_fares_df = fares_Jan_April.resample('W').sum()
+weekly_fares_df.head(10)  
+![image](https://user-images.githubusercontent.com/94234511/148485146-5a0f8263-408f-43b3-8709-8ca709fe6790.png)
 
+# 8. Using the object-oriented interface method, plot the resample DataFrame using the df.plot() function. 
 
-
-
+# Import the style from Matplotlib.
+from matplotlib import style
+# Use the graph style fivethirtyeight.
+style.use('fivethirtyeight')
+weekly_fares_df.plot()
+plt.ylabel("Fare($USD)")
+plt.title("Total Fare by City Type")
+# Save the file as PyBer_fare_summary.png
+plt.savefig("Resources\PyBer_fare_summary.png")
+  
+  
+  
+  
 Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
+  1) Recommendation 1
+  2) Recommendation 2
+  3) Recommendation 3
+   
 
 Deliverable 3 Requirements
 Structure, Organization, and Formatting (6 points)
