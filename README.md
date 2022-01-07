@@ -1,6 +1,7 @@
 # PyBer_Analysis
 
-#### Cheryl Berger    PyBer_Challenge.ipynb
+#### Cheryl Berger    
+#### PyBer_Challenge.ipynb https://github.com/cherylberger/PyBer_Analysis/blob/main/PyBer_Challenge.ipynb
 
 ## Overview of the analysis: 
 The purpose of the analysis is to create a new database of the ride sharing data for PyBer and analyze the weekly fares by city type. V Isualize requested this analysis to assist the CEO in making future business decisions. A report of the analysis will be provide that includes the steps to generate the data summary using Python and a line plot of the fare data generated in Pandas.  The results will be used to compare the differences in ride sharing data by city type.  Finally, a summary of the analysis and recommendations for PyBer to address the disparities in fares by city type.    
