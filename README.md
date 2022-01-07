@@ -3,8 +3,7 @@
 #### Cheryl Berger
 
 ### Overview of the analysis: Explain the purpose of the new analysis.
-The purpose of the analysis was to 
-V. Isualize has given you and Omar a brand-new assignment. Using your Python skills and knowledge of Pandas, you’ll create a summary DataFrame of the ride-sharing data by city type. Then, using Pandas and Matplotlib, you’ll create a multiple-line graph that shows the total weekly fares for each city type. Finally, you’ll submit a written report that summarizes how the data differs by city type and how those differences can be used by decision-makers at PyBer.
+The purpose of the analysis is to create a new database of the ride sharing data for PyBer and analyze the weekly fares by city type. V Isualize requested this analysis to assist the CEO in making future business decisions. A report of the analysis will be provide that includes the steps to generate the data summary using Python and a line plot of the fare data generated in Pandas.  The results will be used to compare the differences in ride sharing data by city type.  Finally, a summary of the analysis and recommendations for PyBer to address the disparities in fares by city type.    
 
 The report includes two key outputs: 
 1) A ride-sharing summary DataFrame by city type
@@ -78,30 +77,23 @@ import pandas as pd
 total_fare_count_by_type_by_date = pyber_data_df.groupby(["type", "date"]).sum()[["fare"]]
 total_fare_count_by_type_by_date 
   
-#### Reset the index on the DataFrame you created in #1. This is needed to use the 'pivot()' function.
+#### Reset the index on the DataFrame you created in #1 so that the fares for each city type can be parsed by date. Then create a pivot table with date as the index. 
 total_fare_df = total_fare_count_by_type_by_date.reset_index()
 total_fare_df.head()  
-
-##### Create a pivot table with the 'date' as the index, the columns ='type', and values='fare' # to get the total fares for each type of city by the date. 
+  
 total_fare_pivot = total_fare_df.pivot(index="date", columns="type", values="fare")
 total_fare_pivot.tail(10)
-  
-#### Create a new DataFrame from the pivot table DataFrame using loc on the given dates, '2019-01-01':'2019-04-29'.
-new_total_fare = total_fare_df.loc[(total_fare_df["date"] == '2019-01-01:2019-04-28')].sum()[["fare"]]
-new_total_fare
-  
+   
 #### Create a new DataFrame from the pivot table DataFrame using loc on the given dates, '2019-01-01':'2019-04-29'.
 fares_Jan_April = total_fare_pivot.loc['2019-01-01':'2019-04-28']
 fares_Jan_April.head(20)  
   
-#### Set the "date" index to datetime datatype. This is necessary to use the resample() method in Step 8.
+#### Set the "date" index to datetime datatype and verify using the df.info() command in python 
 fares_Jan_April.index = pd.to_datetime(fares_Jan_April.index)
 fares_Jan_April
-
-#### Check that the datatype for the index is datetime using df.info()
 fares_Jan_April.info()  
   
-#### Create a new DataFrame using the "resample()" function by week 'W' and get the sum of the fares for each week.
+#### Finally, create a new DataFrame using the "resample()" function by week 'W' and get the sum of the fares for each week.
 weekly_fares_df = fares_Jan_April.resample('W').sum()
 weekly_fares_df.head(10)  
 ![image](https://user-images.githubusercontent.com/94234511/148485146-5a0f8263-408f-43b3-8709-8ca709fe6790.png)
@@ -118,7 +110,8 @@ plt.title("Total Fare by City Type")
 #### Save the file as PyBer_fare_summary.png
 plt.savefig("Resources\PyBer_fare_summary.png")
   http://localhost:8888/view/PyBer%20Challenge/Resources/PyBer_fare_summary.png
-   
+  ![image](https://user-images.githubusercontent.com/94234511/148487520-952dafb6-86a0-4d02-a124-9b5eec558d00.png)
+
 ### Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
   #### 1) Recommendation 1
   #### 2) Recommendation 2
