@@ -1,31 +1,35 @@
 # PyBer_Analysis
-PyBer Analysis Files
-The analysis should contain the following:
+## PyBer Analysis Files
+#### Cheryl Berger
 
-Overview of the analysis: Explain the purpose of the new analysis.
+### Overview of the analysis: Explain the purpose of the new analysis.
+The purpose of the analysis was to 
+V. Isualize has given you and Omar a brand-new assignment. Using your Python skills and knowledge of Pandas, you’ll create a summary DataFrame of the ride-sharing data by city type. Then, using Pandas and Matplotlib, you’ll create a multiple-line graph that shows the total weekly fares for each city type. Finally, you’ll submit a written report that summarizes how the data differs by city type and how those differences can be used by decision-makers at PyBer.
+A ride-sharing summary DataFrame by city type
+A multiple-line chart of total fares for each city type
 
-# Add Matplotlib inline magic command
+#### Add Matplotlib inline magic command
 %matplotlib inline
 # Dependencies and Setup
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# File to Load (Remember to change these)
+#### File to Load (Remember to change these)
 city_data_to_load = "Resources\city_data.csv"
 ride_data_to_load = "Resources/ride.csv"
 
-# Read the City and Ride Data
+##### Read the City and Ride Data
 city_data_df = pd.read_csv(city_data_to_load)
 ride_data_df = pd.read_csv(ride_data_to_load)
 
-# Combine the data into a single dataset
+#### Combine the data into a single dataset
 pyber_data_df = pd.merge(ride_data_df, city_data_df, how="left", on=["city", "city"])
 
-# Display the data table for preview
+##### Display the data table for preview
 pyber_data_df.head()
 ![image](https://user-images.githubusercontent.com/94234511/148483493-1f2095ca-eb94-47ef-9647-a21ca3f65700.png)
 
-Results: Using images from the summary DataFrame and multiple-line chart, describe the differences in ride-sharing data among the different city types.
+### Results: Using images from the summary DataFrame and multiple-line chart, describe the differences in ride-sharing data among the different city types.
 
 Using groupby statements get the data to build a summary data frame that includes the following parameters by city type:
 Total Rides	Total Drivers	Total Fare	Average Fare per Ride	Average Fare per Driver
@@ -118,32 +122,18 @@ plt.ylabel("Fare($USD)")
 plt.title("Total Fare by City Type")
 # Save the file as PyBer_fare_summary.png
 plt.savefig("Resources\PyBer_fare_summary.png")
-  
-  
-  
-  
-Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
+  http://localhost:8888/view/PyBer%20Challenge/Resources/PyBer_fare_summary.png
+   
+### Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
   1) Recommendation 1
   2) Recommendation 2
   3) Recommendation 3
    
 
-Deliverable 3 Requirements
-Structure, Organization, and Formatting (6 points)
-The written analysis has the following structure, organization, and formatting:
 
-There is a title, and there are multiple sections. (2 pt)
-Each section has a heading and subheading. (2 pt)
-Links to images are working and displayed correctly. (2 pt)
-Analysis (14 points)
-The written analysis has the following:
 
-Overview of the analysis:
 
-The purpose of the new analysis is well defined. (3 pt)
-Results:
 
-There is a description of the differences in ride-sharing data among the different city types. Ride-sharing data include the total rides, total drivers, total fares, average fare per ride and driver, and total fare by city type. (7 pt)
-Summary:
 
-There is a statement summarizing three business recommendations to the CEO for addressing any disparities among the city types. (4 pt)
+
+
