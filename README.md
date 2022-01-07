@@ -66,11 +66,11 @@ PyBer_summary_df
 <Add image of formatted DataFrame>
 
  
-* The total number of rides in the urban cities is the highest.
-* The average number of rides in the rural cities is about 3.5 and 2.5 times lower than urban and suburban cities, respectively.
-* The average fare by city type,  is highest in the rural cities and lowest in the ____ cities
-* The average fare per driver is Xtimes higher in ____cities than ______ and _________. 
-* 
+* The total number of rides in the urban cities is the highest with a total of 1625 rides. Urban ride counts are almost triple the number of rides in suburban cities, 625 and about 15 times higher than rural cities, 125 rides. 
+* Similarly, the total number of PyBer drivers varies drastically by city type during the first quarter of 2019.   These data indicate approximately 500 drivers serve the rural cities, 8500 in suburban cities while driver counts near 60,000 in urban cities. This is consistent with earlier reports for these data that indicated the average number of rides in the rural cities was about 3.5 and 2.5 times lower than urban and suburban cities, respectively.
+* The average fare by city type is the highest in the rural cities at $34.62 is the lowest in the urban cities, $24.52
+* The average fare per driver is almost 10 times higher in the urban cities at $36.76 compared to $30.00 and average fares of $4.29 for rural cities.
+ 
 ### 2) Next, using Pandas and Matplotlib, create a multiple line plot that shows the total weekly of the fares for each type of city.
 #### Read the merged DataFrame
 %matplotlib inline
