@@ -30,7 +30,7 @@ The report includes two key outputs:
 
 ### Using the code steps described below, generate the summary data by city type and create the PyBer_Challenge Summary in Pandas DataFrame (see PyBer_Challenge.ipnyb) 
 
-  #### 1) Using groupby statements get the data to build a summary data frame that includes the following parameters by city type:
+  #### 1) Using groupby statements, get the data to build a summary data frame that includes the following parameters by city type:
                       * Total Rides	
                       * Total Drivers	
                       * Total Fare	
@@ -52,7 +52,7 @@ The report includes two key outputs:
   average_fare_by_driver_count = pyber_data_df.groupby(["type"]).mean()["driver_count"]
   average_fare_by_driver_count.head()
 
-#### Using Pandas generate the PyBer_Challenge Summary dataframe
+#### Using Pandas, generate the PyBer_Challenge Summary dataframe and display the table
   PyBer_summary_df = pd.DataFrame ({'Total Rides':total_ride_count,
                    'Total Drivers':total_driver_count,
                    'Total Fare':total_fare_count, 
@@ -62,7 +62,21 @@ The report includes two key outputs:
 
 ![image](https://user-images.githubusercontent.com/94234511/148483966-0c3485b6-9c93-4e70-8d64-5ddb7dcfad09.png)
 
-  #### After removing the index label and formatting the data, the final summary of the ride data by type is displayed below
+  #### Improve the readability of the DataFrame by removing the index label and formatting the data in each column.  The final summary of the ride data by type is displayed below
+  PyBer_summary_df.index.name = None
+  PyBer_summary_df = pd.DataFrame ({'Total Rides':total_ride_count,
+                 'Total Drivers':total_driver_count,
+                 'Total Fare':total_fare_count, 
+                 'Average Fare per Ride':average_fares_by_type, 
+                 'Average Fare per Driver':average_fare_by_driver_count})
+
+  PyBer_summary_df["Total Rides"] = PyBer_summary_df["Total Rides"].map("{:,}".format)
+  PyBer_summary_df["Total Drivers"] = PyBer_summary_df["Total Drivers"].map("{:,}".format)
+  PyBer_summary_df["Total Fare"] = PyBer_summary_df["Total Fare"].map("${:,.2f}".format)
+  PyBer_summary_df["Average Fare per Ride"] = PyBer_summary_df["Average Fare per Ride"].map("${:,.2f}".format)
+  PyBer_summary_df["Average Fare per Driver"] = PyBer_summary_df["Average Fare per Driver"].map("${:,.2f}".format)
+  PyBer_summary_df
+    
 ![image](https://user-images.githubusercontent.com/94234511/148553616-db500b20-16f7-4128-9c35-4dc75f8f72fd.png)
 
   ### The differences in ride-sharing data among the different city types are explained below:
